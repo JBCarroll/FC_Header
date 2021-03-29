@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+a,
+ul,
+li,
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
+  text-decoration: none;
 }
 
 html:focus-within {
