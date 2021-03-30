@@ -272,10 +272,6 @@ picture {
   display: none !important;
 }
 
-.spacer {
-  height: 5000px;
-}
-
 .active {
   color: #a2cd3a !important;
   font-weight: bold;
