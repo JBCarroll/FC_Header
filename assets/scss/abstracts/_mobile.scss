@@ -1,0 +1,14 @@
+@media only screen and (max-width: 1086px){
+    #navbar-container{
+        justify-content: center !important;
+    }
+    .alt-container{
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 620px){
+    .nav-menu{
+        display: none !important;
+    }
+}

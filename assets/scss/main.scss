@@ -1,13 +1,14 @@
-@use '../scss/abstracts' as *;
+@use '../scss/abstracts/' as *;
 
 #header-container{
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     background: $primary--bg;
     width: 100%;
     box-shadow: 0px 5px 3px rgba(0,0,0,.2);
     z-index: 99;
+    transition: all .5s ease-out;
 }
 
 .header-wrapper{
@@ -18,7 +19,7 @@
     align-items: center;
     justify-content: space-between;
     height: 100px;
-    width: 1210px;
+    max-width: 1210px;
     padding: 20px;
     margin: 0 auto;
     overflow: visible;
@@ -42,14 +43,6 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 50px;
-        > a{
-            position: relative;
-            color: $white;
-            font-family: $ff-main;
-            &:hover{
-                color: $accent;
-            }
-        }
     }
 }
 
@@ -104,14 +97,141 @@
     }
 }
 
+#mobile-container{
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    .mobile-menu-container{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: 600px;
+        top: 0;
+        left: 0;
+        text-align: center;
+        gap: 50px;
+        padding: 50px;
+        background: #231f20;
+        z-index: 98;
+        > a{
+            position: absolute;
+            z-index: 9999;
+            &:first-child{
+                top: 20%;
+            }
+            &:nth-child(2){
+                top: 20%;
+                right: 10%;
+            }
+            &:nth-child(3){
+                left: 11%;
+                top: 50%;
+            }
+            &:nth-child(4){
+                right: 15%;
+                top: 50%;
+            }
+            &:nth-child(5){
+                bottom: 17%;
+                left: 45%;
+            }
+        }
+        .logo{
+            position: relative;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            > img{
+                height: 200px;
+            }
+        }
+    }
+    .menu_toggle{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 20px;
+        .menu_open{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 20px;
+            height: 20px;
+            justify-content: center;
+            align-items: flex-end;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 99;
+            .line{
+                background: $white;
+                height: 3px;
+                &:first-child{
+                    width: 100%;
+                }
+                &:nth-of-type(2){
+                    width: 50%;
+                }
+                &:last-child{
+                    width: 30%;
+                }
+            }
+        }
+        .menu_close{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 20px;
+            height: 20px;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 100;
+            .line{
+                position: absolute;
+                background-color: $white;
+                height: 3px;
+                width: 100%;
+                &:first-child{
+                    rotate: 45deg;
+                }
+                &:last-child{
+                    rotate: -45deg;
+                }
+            }
+        }
+    }
+}
+
+.menu_link{
+    position: relative;
+    color: $white;
+    font-family: $ff-main;
+    &:hover{
+        color: $accent;
+    }
+}
+
+.hidden{
+    display: none !important;
+}
+
 .spacer{
     height: 5000px;
 }
 
 .active{
     color: $accent !important;
-}
-
-.scroll{
-    top: -50px;
+    font-weight: bold;
 }
