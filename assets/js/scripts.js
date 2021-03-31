@@ -1,18 +1,10 @@
 
 // ACTIVATE MOBILE MENU
 $(function(){
-  if ($(window).width() < 620) {
-    $('.nav-menu, .alt-container').addClass('hidden');
-    $('#mobile-container').removeClass('hidden');
-
-  }else if($(window).width() > 620){
-    $('.nav-menu, .alt-container').removeClass('hidden');
-    $('#mobile-container').addClass('hidden');
-  }
-
   $('.menu_open').click(function(){
     $('.menu_open').addClass('hidden');
     $('.menu_close').removeClass('hidden');
+    $('#mobile-container').removeClass('hidden');
   });
   $('.menu_close').click(function(){
     $('.menu_open').removeClass('hidden');
