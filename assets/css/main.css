@@ -154,9 +154,42 @@ picture {
   display: flex;
   gap: 30px;
 }
-.alt-container .account-area > a {
-  color: #fff;
+.alt-container .account-area .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  cursor: pointer;
+}
+.alt-container .account-area .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #231F20;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.alt-container .account-area .dropdown-content > a {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  float: none;
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.alt-container .account-area .dropdown-content > a:hover {
+  background: #a2cd3a;
+}
+.alt-container .account-area:hover .dropdown-content {
+  display: block;
+  position: absolute;
+  top: 50px;
+  z-index: 99;
 }
 .alt-container .social-area > a > i {
   color: #fff;

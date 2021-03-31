@@ -84,9 +84,42 @@
     .account-area{
         display: flex;
         gap: 30px;
-        > a{
-            color: $white;
+        .dropbtn{
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
             font-family: $ff-main;
+            margin: 0;
+            cursor: pointer;
+        }
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: $primary--bg;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            > a{
+                font-family: $ff-main;
+                float: none;
+                color: $white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+                &:hover{
+                    background: $accent;
+                }
+            }
+        }
+        &:hover .dropdown-content{
+            display: block;
+            position: absolute;
+            top: 50px;
+            z-index: 99;
         }
     }
     .social-area{
